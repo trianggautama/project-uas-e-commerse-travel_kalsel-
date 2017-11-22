@@ -20,7 +20,7 @@
 			<table class="table table-striped table-bordered">
 	<tr>
     <th>No</th>
-		<th>kode jadwal</th>
+		<th>kode jadwals</th>
 		<th>harga</th>
 		<th>tanggal berankat</th>
     <th>Action</th>
