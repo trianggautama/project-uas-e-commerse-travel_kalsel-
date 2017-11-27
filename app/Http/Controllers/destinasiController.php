@@ -16,10 +16,17 @@ class destinasiController extends Controller
 
         $destinasi = destinasi::findOrFail($id);
         $jadwal = $destinasi->jadwal;
-
         return view('pesan',compact('destinasi','jadwal'));
     }
 
+    public function tesharga($id){
+
+        $jadwal1 = jadwal::findOrFail($id);
+        $harga= $jadwal1->harga;
+        $totalharga= $harga *4;
+        dd($totalharga);
+        return view('pesan',compact('destinasi','jadwal'));
+    }
 
 
 
