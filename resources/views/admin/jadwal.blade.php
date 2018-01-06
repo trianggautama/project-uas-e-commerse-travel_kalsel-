@@ -53,7 +53,8 @@
 
                              </a>
                            </td>
-                           <td class="text-center"><form method="POST" action="/admin/jadwal/{{$j-> id}}/delete">
+                           <td class="text-center">
+                             <form method="POST" action="/admin/jadwal/{{$j-> id}}/delete">
                            {{csrf_field()}}
                            <button type="submit" class="btn btn-danger"  onclick="return confirm('Anda yakin akan menghapus jadwal <?php echo $j-> tanggal_berangkat; ?>?')">
                              <span class="fa fa-trash" aria-hidden="true"></span>
@@ -97,6 +98,11 @@
                      <div class="form-group">
                        <label for="password">Tanggal Berangkat</label>
                        <input type="date" name="tanggal_berangkat"  class="form-control" />
+                     </div>
+
+                     <div class="form-group">
+                       <label for="password">Durasi Trip</label>
+                       <input type="text" name="durasi"  class="form-control" />
                      </div>
 
                      <div class="form-group">

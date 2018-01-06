@@ -19,6 +19,7 @@ class CreateJadwalsTable extends Migration
           $table->date('tanggal_berangkat');
           $table->integer('destinasi_id')->length(10);
           $table->integer('kuota');
+          $table->integer('durasi')->length(1);
           $table->timestamps();
         });
     }

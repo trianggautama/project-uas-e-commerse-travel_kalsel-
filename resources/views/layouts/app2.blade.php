@@ -21,38 +21,24 @@
    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-           <div class="container">
-             <a class="navbar-brand js-scroll-trigger" href="#header"><b>Travel </b>Kalsel</span></a>
-             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-               Menu
-               <i class="fa fa-bars"></i>
-             </button>
-             <div class="collapse navbar-collapse" id="navbarResponsive">
-               <ul class="navbar-nav text-uppercase ml-auto">
-                 <li class="nav-item">
-                   <a class="nav-link js-scroll-trigger" href="#services">Blog</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link js-scroll-trigger" href="#portfolio">Open Trip</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link js-scroll-trigger" href="#about">Private Trip</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link js-scroll-trigger" href="/about">About Us</a>
-                 </li>
-                 <li class="nav-item">
-                   <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                 </li>
-               </ul>
-             </div>
-           </div>
-         </nav>
+      <div class="topnav" id="myTopnav">
+        <div class="container">
+
+    <a class="navbar-brand js-scroll-trigger"  href="/" style="  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
+"><b>Travel </b>Kalsel</span></a>
+
+    <a href="#news">blog</a>
+    <a href="#contact">Open Trip</a>
+    <a href="#about">Private Trip</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+
+  </div>
+
+  </div>
           <!--    <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
   <a href="#news" class="pull-right">News</a>

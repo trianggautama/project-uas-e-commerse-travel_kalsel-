@@ -5552,7 +5552,11 @@ a.bg-dark:focus, a.bg-dark:hover {
 }
 
 .rounded-circle {
-  border-radius: 50%!important
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50% !important;
+  border:5px solid #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .rounded-0 {
@@ -7839,4 +7843,28 @@ a.text-dark:focus, a.text-dark:hover {
   visibility: hidden!important
 }
 
-/*# sourceMappingURL=bootstrap.min.css.map */
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}

@@ -21,20 +21,20 @@
       <div class="row">
 
         <div class="col-lg-6" side>
-  <img src="/img/1.jpg" alt="#"  class="poster">
+  <img src="/img/1.jpg" alt="#" style="width:100%">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" style="padding-top:80px;padding-left:40px;">
           <h3>judul blog</h3>
-          <p>          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  consectetur!
+          <p style="text-align:justify;">          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  consectetur!
 </p>
-        <div class="btn btn-blog"> <a href="#">More blog</a></div>
+      <a class="btn btn-blog" href="#">More Blog</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Grid -->
-  <section class="bg-light" id="portfolio">
+  <section class="" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -44,14 +44,14 @@
       </div>
       <div class="row">
           @foreach( $destinasi as $d)
-        <div class="col-md-4 col-sm-6 portfolio-item ">
-          <a class="portfolio-link"  href="pesan/{{$d->id}}">
+        <div class="col-md-4 col-sm-12 portfolio-item text-center" href="detail/{{$d->id}}">
+          <a class="portfolio-link"  href="detail/{{$d->id}}">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
-                <i class="fa fa-info fa-3x"></i>
+                <i class="fa  fa-arrow-right fa-3x"></i>
               </div>
             </div>
-          <img src="/img/1.jpg" alt="pesan/{{$d->id}}"  class="poster ">
+          <img src="/img/destinasi/{{$d->gambar_utama}}" alt="#"  class="poster ">
           </a>
           <div class="portfolio-caption">
             <h4>{{$d->nama_destinasi}}</h4>
@@ -65,95 +65,8 @@
   </section>
 
   <!-- Team -->
-  <section class="bg-light" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-facebook"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fa fa-linkedin"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
+
 
   <!-- Clients -->
   <section class="py-5">
@@ -188,39 +101,46 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading ">Contact </h2>
+          <hr>
+          <br>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <form id="contactForm" name="sentMessage" novalidate>
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
-                </div>
+              <div class="col-md-6 text-center">
+                <h5>Alamat Kantor</h5>
+                  <iframe  src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"scrolling="no" width="300px" height="200px"></iframe>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
+              <div class="col-md-6  text-center">
+                <h5>Social Media</h5>
+                  <ul class="list-inline social-buttons">
+                    <li class="list-inline-item text-center">
+                      <a href="#">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item text-center">
+                      <a href="#">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item text-center">
+                    <a href="#">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+                <h5>Email:</h5>
+                <p>kalseltrip@gmail.com</p>
+                <h5>Telepon:</h5>
+                <p>0851176524314</p>
+                <a class="btn btn-blog" href="##tambahdestinasi" data-toggle="modal"
+                                 data-target="#tambahdestinasi"> Send us a message</a>
               </div>
               <div class="clearfix"></div>
-              <div class="col-lg-12 text-center">
-                <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
-              </div>
             </div>
           </form>
         </div>
@@ -232,40 +152,51 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Your Website 2017</span>
+        <div class="col-md-12 pull-right">
+          <span class="copyright">Copyright &copy; 2017</span>
         </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-linkedin"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
+
       </div>
     </div>
   </footer>
+  <div id="tambahdestinasi" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Tambah data Semester</h4>
+          <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- form login -->
+          <form  method="post" enctype="multipart/form-data" action="">
+              {{csrf_field() }}
+
+              <div class="form-group">
+                <label for="kode_destinasi">Email </label>
+                <input type="text" name="kode_destinasi"  class="form-control" />
+              </div>
+            <div class="form-group">
+              <label for="nama_destinasi">Nama </label>
+              <input type="text" name="nama_destinasi"  class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="alamat">Pesan</label>
+              <textarea name="name" rows="8" cols="50" class="form-control"></textarea>
+            </div>
+             <div class="text-right">
+
+
+             </div>
+           </div>
+
+          </form>
+          <!-- end form login -->
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
 @endsection

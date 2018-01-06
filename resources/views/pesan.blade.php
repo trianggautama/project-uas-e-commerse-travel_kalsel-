@@ -1,59 +1,58 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
-<div class="row">
- <div class="col-md-8">
-<h2>{{$destinasi->nama_destinasi}}</h2>
-   <hr>
-   <p>{{$destinasi->keterangan}}</p>
-   <br>
-   <br>
-   <br>
-      <h3>Jadwal Travel {{$destinasi->nama_destinasi}}</h3>
-      <hr>
-   @foreach( $jadwal as $j)
-   <div class="col-md-4 col-sm-6 text-center tumbnail">
-       <div class="card_jadwal">
-           <div class="caption">
-             <h3>{{$j->tanggal_berangkat}}</h4>
-               <hr>
-             <h4>Rp.{{$j->harga}}</h3>
-             <h4>kuota:{{$j->kuota}} Orang</h4>
+  <div class="row">
+    <div class="col-lg-12">
 
+    @if(count($errors)>0)
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+          <li> {{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
+  </div>
 
-               <a  class=" btn button_c " href="/harga/{{$j->id}}">pesan</a>
+    </div>
+<form  method="post"  action="/pesan/{{$jadwal->id}}">
+    {{csrf_field() }}
 
+    <div class="form-group">
+      <input type="hidden" name="harga"  class="form-control" value="{{$jadwal->harga}}" />
+    </div>
+    <div class="form-group">
+      <label for="kode_destinasi">Email </label>
+      <input type="text" name="email"  class="form-control" value="{{old('email')}}" />
+    </div>
+  <div class="form-group">
+    <label for="nama_destinasi">Nama </label>
+    <input type="text" name="nama"  class="form-control" value="{{old('nama')}}"/>
+  </div>
+  <div class="form-group">
+    <label for="nama_destinasi">No.hp </label>
+    <input type="text" name="no_hp"  class="form-control" value="{{old('no_hp')}}"/>
+  </div>
+  <div class="form-group">
+    <label for="alamat">jumlah pesanan /orang</label>
+    <input type="number" name="jumlah_pesanan" class="form-control" >
+  </div>
+   <div class="text-right">
+     <a href="/" class="btn btn-danger"> Batal</a>
+     <input class="btn btn-success" type="submit" name="submit" value="Submit"  onclick="return confirm('Pastikan data anda sudah lengkap dan benar ?')">
+     {{csrf_field() }}
 
-
-
-
-           </div>
-       </div>
    </div>
- @endforeach
  </div>
- <div class="col-md-4">
-   <br>
-   <br>
-   <br>
-   <div class="card_jadwal pull-right">
-       <div class="caption">
-         <h3>blog List</h4>
 
-        <a href="#">pesona indah bukit bukit</a><br>
-        <a href="#">pesona indah bukit bukit</a><br>
-        <a href="#">pesona indah bukit bukit</a><br>
-        <a href="#">pesona indah bukit bukit</a><br>
-        <a href="#">pesona indah bukit bukit</a>
-<hr>
-
-
-
-       </div>
-   </div>
+</form>
 </div>
- </div>
-</div>
-</div>
+
 @endsection
