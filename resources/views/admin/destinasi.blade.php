@@ -60,7 +60,7 @@
                      </a>
                      </td>
                       <td class="text-center">
-                     <a href="#" class="btn btn-info" title="detail">
+                     <a href="/admin/detail_jadwal/{{$d->id}}" class="btn btn-info" title="detail">
                        <i class="fa fa-bars"></i>
 
                      </a>
@@ -81,7 +81,7 @@
      <!-- /.row -->
      <div class="row no-print">
             <div class="col-xs-12">
-              <a href="{{ url('/admin/destinasi-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+              <a href="{{ url('/admin/laporan/destinasi-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
             </div>
           </div>
           <br>

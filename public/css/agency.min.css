@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-  padding: 100px 0
+  padding: 0px;
 }
 
 section h2.section-heading {
@@ -51,7 +51,7 @@ section h3.section-subheading {
 
 @media (min-width:768px) {
   section {
-    padding: 150px 0
+    padding: 50px 0
   }
 }
 
@@ -226,7 +226,7 @@ header.masthead .intro-text .intro-heading {
 
 #portfolio .portfolio-item {
   right: 0;
-  margin: 0 0 15px;
+  margin: 0;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -663,6 +663,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   display: block;
   transition: .5s ease;
   backface-visibility: hidden;
+  position: center;
 }
 
 .card {
@@ -730,40 +731,34 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   border-color:rgb(204, 171, 0);
   color:rgb(204, 171, 0);
 }
+
+
+
 .topnav {
-    background-color: #242323;
-    overflow: hidden;
-    width: 100%;
-    height: 60px;
-    padding: auto;
+  overflow: hidden;
+  background-color: #333;
 }
 
-
-
-/* Style the links inside the navigation bar */
 .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px;
-
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
-    color: #fed136;
+  color: #fed136;
 }
 
 
-/* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
-    display: none;
+  display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -771,7 +766,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -783,3 +778,5 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     display: block;
     text-align: left;
   }
+
+}

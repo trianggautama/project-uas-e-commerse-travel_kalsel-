@@ -33,25 +33,21 @@
                  <th>Tujuan</th>
                  <th>Jumlah Orang</th>
                  <th>Total bayar</th>
-                 <th>Status Bayar</th>
+                 <th>Tanggal Pembayaran</th>
                               </tr>
                </thead>
                <tbody>
                  @foreach($pesanan as $p)
                <tr>
                  <td>{{$p->id}}</td>
-                 <td><a href="/admin/detailpesanan/{{$p->id}}">{{$p->nama}}</a></td>
+                 <td>{{$p->nama}}</td>
                  <td>{{$p->no_hp}}</td>
                  <td>{{$p->jadwal->tanggal_berangkat}}</td>
                  <td>{{$p->jadwal->destinasi->nama_destinasi}}</td>
                  <td>{{$p->jumlah_orang}}</td>
                 <td>Rp.{{$p->total_bayar}}</td>
                    <td class="text-center">
-                     <form class="form-horizontal form-label-left" method="post" action="/konfirmasi/{{$p->id}}">
-                       {{method_field('PUT') }}
-                       {{ csrf_field() }}
-                    <input type="submit" name="submit" class="btn btn-sm btn-success" value="Konfirmasi bayar">
-                   </form>
+                     {{$p->updated_at}}
                      </td>
 
                </tr>

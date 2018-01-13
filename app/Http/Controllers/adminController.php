@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\destinasi;
 use App\jadwal;
 use App\pesanan;
+use App\pesan;
 
 
 class adminController extends Controller
@@ -90,8 +92,16 @@ public function destinasi_edit($id){
 
   public function destinasi_print(){
       $destinasi=destinasi::all();
-  return view('admin.destinasi-print',compact('destinasi'));
+  return view('admin.laporan.destinasi-print',compact('destinasi'));
   }
+
+
+    public function jadwal_detail($id){
+        $destinasi=destinasi::all();
+      $jadwal=jadwal::where('destinasi_id',$id)->get();
+
+    return view('admin.jadwal',compact('jadwal','destinasi'));
+    }
 
   //jadwal function
 
@@ -139,10 +149,68 @@ public function jadwal_update(Request $request, $id)
 //pesanan fungsi
 
 public function pesanan_index(){
-    $pesanan=pesanan::all();
+    $pesanan=pesanan::where('status_bayar','0')->get();
   $jadwal=jadwal::all();
 return view('admin.pesanan',compact('jadwal','pesanan'));
 
 }
+
+
+public function konfirmasi($id){
+
+    $pesanan=pesanan::findOrFail( $id);
+    $jadwal_id = $pesanan->jadwal->id;
+    $jumlahorang=$pesanan->jumlah_orang;
+    $jadwal=jadwal::findOrFail( $jadwal_id);
+    $kuota=$jadwal->kuota;
+
+    $pesanan->status_bayar = 1;
+    $jadwal->kuota = $kuota-$jumlahorang;
+
+    $pesanan->save();
+    $jadwal->save();
+
+      Mail::send('emails.konfirmasi_pembayaran', ['pesanan'=>$pesanan], function($mail) use($pesanan){
+          $mail->from('kalseltrip@gmail.com','Konfirmasi pembayaran');
+          $mail->to($pesanan->email,$pesanan->nama);
+          $mail->subject('Konfirmasi pembayaran');
+        });
+
+
+
+    return redirect('admin/pesanan');
+
+}
+
+public function transaksi_index(){
+    $pesanan=pesanan::where('status_bayar','1')->get();
+  $jadwal=jadwal::all();
+return view('admin.transaksi',compact('jadwal','pesanan'));
+
+}
+
+public function pesanan_detail($id){
+    $pesanan=pesanan::findOrFail( $id);
+    return view('admin/pesanan_detail',compact('pesanan'));
+
+}
+
+
+//messege function
+
+public function inbox_index(){
+
+  $pesan=pesan::all();
+return view('admin.inbox',compact('pesan'));
+
+}
+
+public function read_index($id){
+
+  $pesan=pesan::findOrFail( $id);
+return view('admin.read',compact('pesan'));
+
+}
+
 
 }

@@ -73,7 +73,14 @@
  </div>
  <div class="col-md-4 col-xs-12 text-center">
    <br>
-
+   <br>
+   <div class="caption">
+     <h3>Bingung Bagaimana Memesan?</h4>
+       <a href="#">Langkah Pemesanan</a>
+   </div>
+   <br>
+   <hr>
+   <br>
        <div class="caption">
          <h3>blog List</h4>
 
@@ -82,12 +89,10 @@
         <a href="#">pesona indah bukit bukit</a><br>
         <a href="#">pesona indah bukit bukit</a><br>
         <a href="#">pesona indah bukit bukit</a>
-<hr>
        </div>
-       <div class="caption">
-         <h3>Bingung Bagaimana Memesan?</h4>
-           <a href="#">Langkah Pemesanan</a>
-       </div>
+<br>
+<br>
+<br>
 </div>
  </div>
 </div>

@@ -31,7 +31,12 @@
 <div class="container">
   <table id="example1" class="table table-bordered table-striped">
 
+
     <br>
+    <div class="text-center">
+      <h2>Laporan Data Destinasi</h2>
+
+    </div>
     <br>
     <thead>
     <tr>

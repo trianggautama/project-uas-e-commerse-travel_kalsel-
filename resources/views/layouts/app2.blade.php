@@ -23,22 +23,28 @@
 <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 </head>
+<!--style="  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;-->
 <body>
     <div id="app">
       <div class="topnav" id="myTopnav">
-        <div class="container">
+    <a href="/" class="active" style="  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;"
+    >Travel Kalsel</a>
 
-    <a class="navbar-brand js-scroll-trigger"  href="/" style="  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
-"><b>Travel </b>Kalsel</span></a>
+        <a class="nav-link js-scroll-trigger" href="#services">Blog</a>
 
-    <a href="#news">blog</a>
-    <a href="#contact">Open Trip</a>
-    <a href="#about">Private Trip</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        <a class="nav-link js-scroll-trigger" href="#portfolio">Open Trip</a>
 
+        <a class="nav-link js-scroll-trigger" href="#about">Private Trip</a>
+
+        <a class="nav-link js-scroll-trigger" href="/about">About Us</a>
+
+        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+
+
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
-  </div>
+
           <!--    <div class="topnav" id="myTopnav">
   <a href="#home" class="active">Home</a>
   <a href="#news" class="pull-right">News</a>
@@ -56,6 +62,15 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/agency.min.js') }}"></script>
-
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 </body>
 </html>

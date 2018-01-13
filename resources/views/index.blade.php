@@ -16,25 +16,10 @@
   </header>
 
   <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <div class="row">
 
-        <div class="col-lg-6" side>
-  <img src="/img/1.jpg" alt="#" style="width:100%">
-        </div>
-        <div class="col-lg-6" style="padding-top:80px;padding-left:40px;">
-          <h3>judul blog</h3>
-          <p style="text-align:justify;">          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  consectetur!
-</p>
-      <a class="btn btn-blog" href="#">More Blog</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Portfolio Grid -->
-  <section class="" id="portfolio">
+  <section class=" text-center" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -51,7 +36,10 @@
                 <i class="fa  fa-arrow-right fa-3x"></i>
               </div>
             </div>
-          <img src="/img/destinasi/{{$d->gambar_utama}}" alt="#"  class="poster ">
+            <div class="text-center">
+              <img src="/img/destinasi/{{$d->gambar_utama}}" alt="#"  class="poster ">
+
+            </div>
           </a>
           <div class="portfolio-caption">
             <h4>{{$d->nama_destinasi}}</h4>
@@ -65,7 +53,22 @@
   </section>
 
   <!-- Team -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
 
+        <div class="col-lg-6" side>
+  <img src="/img/1.jpg" alt="#" style="width:100%">
+        </div>
+        <div class="col-lg-6" style="padding-top:80px;padding-left:40px;">
+          <h3>judul blog</h3>
+          <p style="text-align:justify;">          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium  consectetur!
+</p>
+      <a class="btn btn-blog" href="#">More Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <!-- Clients -->
@@ -159,6 +162,7 @@
       </div>
     </div>
   </footer>
+
   <div id="tambahdestinasi" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -170,25 +174,24 @@
         </div>
         <div class="modal-body">
           <!-- form login -->
-          <form  method="post" enctype="multipart/form-data" action="">
+          <form  method="post" action="/kirim-pesan">
               {{csrf_field() }}
 
               <div class="form-group">
                 <label for="kode_destinasi">Email </label>
-                <input type="text" name="kode_destinasi"  class="form-control" />
+                <input type="text" name="email"  class="form-control" />
               </div>
             <div class="form-group">
               <label for="nama_destinasi">Nama </label>
-              <input type="text" name="nama_destinasi"  class="form-control" />
+              <input type="text" name="nama"  class="form-control" />
             </div>
 
             <div class="form-group">
               <label for="alamat">Pesan</label>
-              <textarea name="name" rows="8" cols="50" class="form-control"></textarea>
+              <textarea name="pesan" rows="8" cols="50" class="form-control"></textarea>
             </div>
              <div class="text-right">
-
-
+               <input type="submit" name="submit" value="submit" class="btn btn-warning">
              </div>
            </div>
 

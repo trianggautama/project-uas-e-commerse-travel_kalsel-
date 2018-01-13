@@ -4,12 +4,10 @@
 <br>
 <br>
 <br>
-<br>
-<br>
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-
+<h2 class="text-center" style="color: #fed136;">Form Pesanan</h2>
     @if(count($errors)>0)
     <div class="alert alert-danger">
       <ul>
@@ -22,6 +20,7 @@
   </div>
 
     </div>
+
 <form  method="post"  action="/pesan/{{$jadwal->id}}">
     {{csrf_field() }}
 
