@@ -134,11 +134,7 @@
         <li>
           <a href="/admin/inbox">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
+
           </a>
         </li>
 
@@ -343,9 +339,6 @@
       </div>
     </aside>
 
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
   </div>
 
@@ -356,6 +349,7 @@
             <script src="{{ asset('js/adminlte.min.js') }}"></script>
               <script src="{{ asset('js/demo.js') }}"></script>
               <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+              <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
               <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
               <script>
   $(function () {

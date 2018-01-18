@@ -19,11 +19,18 @@
          <div class="box">
            <!-- /.box-header -->
            <div class="box-body">
+             @if(session('msg'))
+    <div class="alert alert-success">
+
+        <p>{{session('msg')}}</p>
+
+    </div>
+    @endif
              <hr>
              <a   href="/admin/destinasi_tambah" ><i class="fa fa-plus pull-right"> Tambah Destinasi</i></a>
                 <br>
                 <br>
-             <table id="example1" class="table table-bordered table-striped">
+             <table id="example1" class="table table-bordered table-striped table-resposive">
 
                <thead>
                <tr>

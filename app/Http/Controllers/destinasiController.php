@@ -13,7 +13,7 @@ use App\Mail\pesanproses;
 class destinasiController extends Controller
 {
     public function index(){
-      $destinasi=destinasi::all();
+      $destinasi=destinasi::latest()->paginate(3);
     return view('index',compact('destinasi'));
     }
     public function konfirmasi_index(){
@@ -63,7 +63,7 @@ class destinasiController extends Controller
       //kirim email
     Mail::send('emails.pesanan', ['request'=>$request], function($mail) use($request){
       $mail->from('kalseltrip@gmail.com','Ada pesanan');
-      $mail->to('admin@gmail.com','Admin');
+      $mail->to('trianggategarutama@gmail.com','Admin');
       $mail->subject('Ada Pesanan baru');
     });
 
@@ -91,5 +91,11 @@ public function kirimpesan(Request $request){
     pesan::create($request->all());
     return redirect('/');
 }
+
+
+public function langkah_pemesanan(){
+  return view('/langkah_pemesanan');
+}
+
 
 }

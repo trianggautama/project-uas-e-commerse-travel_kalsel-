@@ -27,13 +27,10 @@
             </div>
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox
-                  <span class="label label-primary pull-right">12</span></a></li>
+                <li class="active"><a href="/admin/inbox"><i class="fa fa-inbox"></i> Inbox
+                </a></li>
                 <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
-                <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
-                <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a>
-                </li>
-                <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
+
               </ul>
             </div>
             <!-- /.box-body -->
@@ -85,11 +82,10 @@
 
             <div class="box-footer">
               <div class="pull-right">
-                <button type="button" class="btn btn-default"><i class="fa fa-reply"></i> Reply</button>
-                <button type="button" class="btn btn-default"><i class="fa fa-share"></i> Forward</button>
+                <a   href="##tambahjadwal" data-toggle="modal"
+                                data-target="#tambahjadwal"><i class="btn btn-default"><i class="fa fa-reply"></i> Balas</i></a>
               </div>
-              <button type="button" class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button>
-              <button type="button" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+              <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> Hapus</button>
             </div>
             <!-- /.box-footer -->
           </div>
@@ -98,29 +94,7 @@
         <!-- /.col -->
             </div>
             <!-- /.box-body -->
-            <div class="box-footer no-padding">
-              <div class="mailbox-controls">
-                <!-- Check all button -->
-                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                </div>
-                <!-- /.btn-group -->
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                <div class="pull-right">
-                  1-50/200
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                  </div>
-                  <!-- /.btn-group -->
-                </div>
-                <!-- /.pull-right -->
-              </div>
-            </div>
+
           </div>
           <!-- /. box -->
         </div>
@@ -130,5 +104,44 @@
     </section>
  </div>
  <!-- /.content-wrapper -->
+ <div id="tambahjadwal" class="modal fade" tabindex="-1" role="dialog">
+   <div class="modal-dialog" role="document">
+     <div class="box box-info">
+              <div class="box-header">
+                <i class="fa fa-envelope"></i>
+
+                <h3 class="box-title">Quick Email</h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                  <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
+                          title="Remove">
+                    <i class="fa fa-times"></i></button>
+                </div>
+                <!-- /. tools -->
+              </div>
+              <div class="box-body">
+                <form action="/read/{{$pesan->id}}/balas" method="post">
+                  Email to :
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email to:" value="{{$pesan->email}}">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject">
+                  </div>
+                  <div>
+                    <textarea class="textarea" placeholder="Message" name="content"
+                              style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </div>
+
+              </div>
+              <div class="box-footer clearfix">
+                <input class="pull-right btn btn-default" type="submit" name="submit" value="Send">
+                {{csrf_field() }}
+
+              </div>
+              </form>
+            </div>
+   </div><!-- /.modal-dialog -->
+ </div><!-- /.modal -->
 
 @endsection

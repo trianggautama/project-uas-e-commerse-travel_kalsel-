@@ -51,7 +51,7 @@ class adminController extends Controller
       $destinasi->gambar_utama = $photo;
    $destinasi->save();
 
-return redirect('admin/destinasi');
+return redirect('admin/destinasi')->with('msg','Data destinasi berhasil disimpan');
 }
 
 
@@ -87,7 +87,7 @@ public function destinasi_edit($id){
       function delete_destinasi($id){
         $destinasi = destinasi::find($id);
         $destinasi->delete();
-        return redirect('admin/destinasi');
+        return redirect('admin/destinasi')->with('msg','Data destinasi berhasil dihapus');
       }
 
   public function destinasi_print(){
@@ -122,7 +122,7 @@ public function destinasi_edit($id){
   ]);
 
     jadwal::create($request->all());
-    return redirect('/admin/jadwal');
+    return redirect('/admin/jadwal')->with('msg','Data Jadwal berhasil ditambah');
 }
 
 public function jadwal_edit($id){
@@ -135,15 +135,25 @@ public function jadwal_edit($id){
 public function jadwal_update(Request $request, $id)
 {
   $jadwal=jadwal::findOrFail($id);
+
+  $this->validate(request(),[
+    'destinasi_id'=>'required',
+  ]);
+
   $jadwal->Update($request->all());
-  return redirect('admin/jadwal');
+  return redirect('admin/jadwal')->with('msg','Data Jadwal berhasil diubah');
 }
 
 
   function delete_jadwal($id){
     $jadwal = jadwal::find($id);
     $jadwal->delete();
-    return redirect('admin/jadwal');
+    return redirect('admin/jadwal')->with('msg','Data Jadwal berhasil dihapus');
+  }
+
+  public function jadwal_print(){
+      $jadwal=jadwal::all();
+  return view('admin.laporan.jadwal-print',compact('jadwal'));
   }
 
 //pesanan fungsi
@@ -155,6 +165,11 @@ return view('admin.pesanan',compact('jadwal','pesanan'));
 
 }
 
+function delete_pesanan($id){
+  $pesanan = pesanan::find($id);
+  $pesanan->delete();
+  return redirect('admin/pesanan');
+}
 
 public function konfirmasi($id){
 
@@ -178,10 +193,17 @@ public function konfirmasi($id){
 
 
 
-    return redirect('admin/pesanan');
+    return redirect('admin/pesanan')->with('msg','Pembayaran Telah Di Konfirmasi');
 
 }
 
+public function pesanan_print(){
+    $pesanan=pesanan::where('status_bayar','1')->get();
+return view('admin.laporan.pesanan-print',compact('pesanan'));
+}
+
+
+//transaksi
 public function transaksi_index(){
     $pesanan=pesanan::where('status_bayar','1')->get();
   $jadwal=jadwal::all();
@@ -211,6 +233,13 @@ public function read_index($id){
 return view('admin.read',compact('pesan'));
 
 }
+public function balas_pesan(Request $request){
+  Mail::send('emails.balasan', ['request'=>$request], function($mail) use($request){
+      $mail->from('kalseltrip@gmail.com','Pesan Balasan');
+      $mail->to($request->email);
+      $mail->subject(' Pesan Balasan');
+    });
 
+}
 
 }

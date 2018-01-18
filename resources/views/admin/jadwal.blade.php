@@ -21,7 +21,23 @@
                      </div>
                      <!-- /.box-header -->
                      <div class="box-body">
-                       <a   href="##tambahjadwal" data-toggle="modal"
+                       @if(session('msg'))
+                       <div class="alert alert-success">
+
+                         <p>{{session('msg')}}</p>
+
+                       </div>
+                       @endif
+                       @if(count($errors)>0)
+                          <div class="alert alert-danger">
+                            <ul>
+                              @foreach($errors->all() as $error)
+                              <li> {{ $error }}</li>
+                              @endforeach
+                            </ul>
+                          </div>
+                          @endif
+                        <a   href="##tambahjadwal" data-toggle="modal"
                                         data-target="#tambahjadwal"><i class="fa fa-plus pull-right"> Tambah semester</i></a>
                           <br>
                           <br>
@@ -44,7 +60,7 @@
                            <td>{{$j->tanggal_berangkat}}
                            </td>
                            <td>{{$j->kuota}}</td>
-                           <td> {{$j->harga}}</td>
+                           <td> Rp.{{$j->harga}}</td>
                            <td>{{$j->destinasi->nama_destinasi}}</td>
                            <td class="text-center">
 
@@ -77,7 +93,7 @@
      <!-- /.row -->
      <div class="row no-print">
             <div class="col-xs-12">
-              <a href="{{ url('/admin/destinasi-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+              <a href="{{ url('/admin/laporan/jadwal-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
             </div>
           </div>
           <br>
@@ -89,7 +105,7 @@
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                    </button>
-                   <h4 class="modal-title">Tambah data Semester</h4>
+                   <h4 class="modal-title">Tambah Jadwal</h4>
                  </div>
                  <div class="modal-body">
                    <!-- form login -->

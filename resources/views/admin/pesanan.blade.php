@@ -19,6 +19,13 @@
          <div class="box">
            <!-- /.box-header -->
            <div class="box-body">
+             @if(session('msg'))
+    <div class="alert alert-success">
+
+        <p>{{session('msg')}}</p>
+
+    </div>
+    @endif
              <hr>
 
                 <br>
@@ -67,12 +74,6 @@
        <!-- /.col -->
      </div>
      <!-- /.row -->
-     <div class="row no-print">
-            <div class="col-xs-12">
-              <a href="{{ url('/admin/destinasi-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-            </div>
-          </div>
-          <br>
    </section>
    <!-- /.content -->
  </div>

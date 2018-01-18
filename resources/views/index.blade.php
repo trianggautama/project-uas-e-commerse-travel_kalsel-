@@ -8,51 +8,51 @@
   <header class="masthead" id="header">
     <div class="container">
       <div class="intro-text">
-        <div class="intro-lead-in">Welcome To South Borneo!</div>
-        <div class="intro-heading text-uppercase">Enjoy the trip</div>
-        <a class="btn btn-primary btn-xl  js-scroll-trigger" href="#services">v</a>
+        <div class="intro-lead-in" style="font-family: 'Yellowtail', cursive; text-shadow: 2px 2px rgba(0, 0, 0, 0.61)">Welcome To South Borneo!</div>
+        <div class="intro-heading text-uppercase" style="font-family: 'Handlee', cursive; text-shadow: 2px 2px rgba(0, 0, 0, 0.61);
+">Enjoy the trip</div>
+        <ul class="list-inline social-buttons">
+
+          <li class="list-inline-item">
+            <a href="#destinasi" class=" js-scroll-trigger">
+              <i class="fa  fa-play-circle"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
 
-  <!-- Services -->
-
-
   <!-- Portfolio Grid -->
-  <section class=" text-center" id="portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Open Trip</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-        </div>
-      </div>
-      <div class="row">
-          @foreach( $destinasi as $d)
-        <div class="col-md-4 col-sm-12 portfolio-item text-center" href="detail/{{$d->id}}">
-          <a class="portfolio-link"  href="detail/{{$d->id}}">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa  fa-arrow-right fa-3x"></i>
-              </div>
-            </div>
-            <div class="text-center">
-              <img src="/img/destinasi/{{$d->gambar_utama}}" alt="#"  class="poster ">
+     <section class="" id="destinasi">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-12 text-center">
+             <h2 class="section-heading text-uppercase">Open Trip</h2>
+             <h3 class="section-subheading text-muted">List Destinasi </h3>
+           </div>
+         </div>
+         <div class="row">
+             @foreach( $destinasi as $d)
+           <div class="col-md-4 col-sm-6 destinasi-item">
+             <a class="destinasi-link"  href="detail/{{$d->id}}">
+               <div class="destinasi-hover">
+                 <div class="destinasi-hover-content">
+                   <i class="fa fa-camera-retro fa-3x"></i>
+                 </div>
+               </div>
+                 <img src="/img/destinasi/{{$d->gambar_utama}}" alt="detail/{{$d->id}}"  class="poster img-fluid">
+             </a>
+             <div class="destinasi-caption">
+               <h4>{{$d->nama_destinasi}}</h4>
+               <p class="text-muted">{{$d->alamat}}</p>
+             </div>
+           </div>
+           @endforeach
+         </div>
+       </div>
+     </section>
 
-            </div>
-          </a>
-          <div class="portfolio-caption">
-            <h4>{{$d->nama_destinasi}}</h4>
-            <p class="text-muted">{{$d->alamat}}</p>
-          </div>
-        </div>
-@endforeach
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
   <section id="services">
     <div class="container">
       <div class="row">
@@ -71,34 +71,6 @@
   </section>
 
 
-  <!-- Clients -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <a href="#">
-            <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section id="contact">
     <div class="container">
@@ -115,11 +87,11 @@
             <div class="row">
               <div class="col-md-6 text-center">
                 <h5>Alamat Kantor</h5>
-                  <iframe  src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"scrolling="no" width="300px" height="200px"></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7965.182660165577!2d114.83578462258916!3d-3.449096789958274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2c0e4710560d8d74!2sUniska+Banjarbaru!5e0!3m2!1sen!2sid!4v1515882535133" scrolling="no" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
-              <div class="col-md-6  text-center">
+              <div class="col-md-6  text-center" style="color:white;">
                 <h5>Social Media</h5>
-                  <ul class="list-inline social-buttons">
+                  <ul class="list-inline social-button">
                     <li class="list-inline-item text-center">
                       <a href="#">
                         <i class="fa fa-twitter"></i>
@@ -141,7 +113,7 @@
                 <h5>Telepon:</h5>
                 <p>0851176524314</p>
                 <a class="btn btn-blog" href="##tambahdestinasi" data-toggle="modal"
-                                 data-target="#tambahdestinasi"> Send us a message</a>
+                                 data-target="#tambahdestinasi" style="border:1px solid white;"> Send us a message</a>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -167,7 +139,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Tambah data Semester</h4>
+          <h4 class="modal-title">Kirim Pesan Ke Admin</h4>
           <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

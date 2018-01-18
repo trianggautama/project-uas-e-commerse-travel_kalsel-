@@ -31,7 +31,6 @@
 <div class="container">
   <table id="example1" class="table table-bordered table-striped">
 
-
     <br>
     <div class="text-center">
       <h2>Laporan Data Jadwal</h2>
@@ -40,17 +39,25 @@
     <br>
     <thead>
     <tr>
-      <th>Kode Destinasi</th>
-      <th>Nama Destinasi</th>
-      <th>Alamat</th>
+      <th>Kode Jadwal</th>
+      <th> Harga</th>
+      <th>Tanggal Berangkat</th>
+      <th> destinasi </th>
+      <th>kuota</th>
+      <th>durasi</th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
-      @foreach($destinasi as $d)
+      @foreach($jadwal as $j)
     <tr>
-      <td>{{$d->id}}</td>
-      <td>{{$d->nama_destinasi}}</td>
-      <td>{{$d->alamat}}</td>
+      <td>{{$j->id}}</td>
+      <td>{{$j->harga}}</td>
+      <td>{{$j->tanggal_berangkat}}</td>
+      <td>{{$j->destinasi->nama_destinasi}}</td>
+      <td>{{$j->tanggal_berangkat}}</td>
+      <td>{{$j->tanggal_berangkat}}</td>
+
 
     </tr>
     @endforeach

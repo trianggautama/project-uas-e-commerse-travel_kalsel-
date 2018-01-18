@@ -6,7 +6,7 @@
    <!-- Content Header (Page header) -->
    <section class="content-header">
      <h1>
-       Data Pesanan
+       Data Transaksi
      </h1>
    </section>
 
@@ -65,7 +65,7 @@
      <!-- /.row -->
      <div class="row no-print">
             <div class="col-xs-12">
-              <a href="{{ url('/admin/destinasi-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+              <a href="{{ url('/admin/laporan/pesanan-print') }}" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
             </div>
           </div>
           <br>

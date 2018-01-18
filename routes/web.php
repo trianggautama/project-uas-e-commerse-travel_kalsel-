@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'destinasiController@index');
 Route::get('/harga/{id}', 'destinasiController@tesharga');
 Route::get('/about', 'destinasiController@about');
+Route::get('/langkah_pemesanan', 'destinasiController@langkah_pemesanan');
 
 
 // halaman admin
@@ -44,24 +45,27 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('/admin/{id}/jadwal_edit', 'adminController@jadwal_edit');
   Route::put('/admin/{id}/jadwal_edit','adminController@jadwal_update');
   Route::delete('/admin/jadwal/{id}/delete', 'adminController@delete_jadwal');
+  Route::get('/admin/laporan/jadwal-print', 'adminController@jadwal_print');
 
 
-  Route::get('/konfirmasi', 'destinasiController@konfirmasi_index');
 
 
   //pesanan
   Route::get('/admin/pesanan', 'adminController@pesanan_index');
   Route::get('/admin/transaksi', 'adminController@transaksi_index');
   Route::get('/admin/detailpesanan/{id}', 'adminController@pesanan_detail');
+  Route::delete('/admin/pesanan/{id}/delete', 'adminController@delete_pesanan');
+  Route::get('/admin/laporan/pesanan-print', 'adminController@pesanan_print');
 
   //inbox
   Route::get('/admin/inbox', 'adminController@inbox_index');
   Route::get('/admin/read/{id}', 'adminController@read_index');
-
+  Route::post('/read/{id}/balas', 'adminController@balas_pesan');
 
 });
 
 //pesan(messege)
+Route::get('/konfirmasi', 'destinasiController@konfirmasi_index');
 Route::post('/kirim-pesan/', 'destinasiController@kirimpesan');
 Route::get('/detail/{id}', 'destinasiController@detail_index');
 Route::get('/detail/pesan/{id}', 'destinasiController@pesan_index');
